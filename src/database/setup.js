@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-// const connectionString = "mongodb://localhost:27017/eventmanager";
 const connectionString =
   "mongodb+srv://a:b@gettingstarted.j15vb.mongodb.net/eventManager?retryWrites=true&w=majority";
 

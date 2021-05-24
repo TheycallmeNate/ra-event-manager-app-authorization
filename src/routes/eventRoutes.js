@@ -7,15 +7,19 @@ const {
   updateEntireEvent,
   deleteSingleEvent,
 } = require("../controllers/eventControllers");
+const {
+  authenticateUser,
+  checkIfAdmin,
+} = require("../middlewares/authentication");
 
-router.post("/events", createNewEvent);
+router.post("/events", authenticateUser, createNewEvent);
 
-router.get("/events", fetchEvents);
+router.get("/events", authenticateUser, fetchEvents);
 
-router.get("/events/:id", fetchSingleEvent);
+router.get("/events/:id", authenticateUser, fetchSingleEvent);
 
-router.put("/events/:id", updateEntireEvent);
+router.put("/events/:id", authenticateUser, checkIfAdmin, updateEntireEvent);
 
-router.delete("/events/:id", deleteSingleEvent);
+router.delete("/events/:id", authenticateUser, checkIfAdmin, deleteSingleEvent);
 
 module.exports = router;

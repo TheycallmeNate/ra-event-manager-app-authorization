@@ -7,6 +7,9 @@ const dbSetup = require("./database/setup");
 const eventRoutes = require("./routes/eventRoutes");
 const authRoutes = require("./routes/authRoutes");
 
+// Seeders
+const { seedAdmin } = require("./seeders/admin");
+
 dbSetup();
 
 // Middleware
